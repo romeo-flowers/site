@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>1 сентября — Romeo Flowers</title>
+<meta name="description" content="Букеты к 1 сентября. Предзаказ до 31 августа, доставка ко времени.">
+<meta property="og:title" content="Букеты к 1 сентября — Romeo Flowers">
+<meta property="og:description" content="15 готовых вариантов от 4 000 ₸. Предзаказ до 31 августа, привезём ко времени линейки.">
+<meta property="og:image" content="https://romeo-flowers.kz/sept/img/b02.jpg">
+<meta property="og:url" content="https://romeo-flowers.kz/sept/">
+<meta property="og:type" content="website">
+<style>
+  @font-face{font-family:Circe;src:url(https://romeo-flowers.github.io/anketa/vitrina/fonts/circe-300.woff2) format('woff2');font-weight:300;font-display:swap}
+  @font-face{font-family:Circe;src:url(https://romeo-flowers.github.io/anketa/vitrina/fonts/circe-400.woff2) format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:Circe;src:url(https://romeo-flowers.github.io/anketa/vitrina/fonts/circe-700.woff2) format('woff2');font-weight:700;font-display:swap}
+  :root{--green:#8ca28c;--green-dark:#7a9079;--cream:#ece7e1;--card:#faf8f5;--ink:#2f3330}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--cream);color:var(--ink);
+       font-family:Circe,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:400;
+       max-width:760px;margin-inline:auto;padding:0 14px 30px;display:flex;flex-direction:column;min-height:100vh}
+  header{background:var(--green);margin:0 -14px 0;padding:30px 20px 26px;text-align:center;color:#fff}
+  header .brand{font-size:12px;letter-spacing:3.6px;text-transform:uppercase;opacity:.9}
+  header h1{margin:10px 0 6px;font-size:26px;font-weight:700;letter-spacing:.4px}
+  header p{margin:0;font-size:14.5px;font-weight:300;opacity:.95;line-height:1.5}
+
+  .note{margin:18px 0 4px;background:var(--card);border:1px solid #dcd6ce;border-radius:14px;
+        padding:14px 16px;font-size:14px;line-height:1.6;color:#4a504a}
+  .note b{color:#3f463e}
+  .note .row{display:flex;gap:9px;align-items:flex-start;margin-bottom:8px}
+  .note .row:last-child{margin-bottom:0}
+  .note .dot{flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:7px}
+
+  /* Три в ряд: вся карточка — ссылка, отдельной кнопки нет. Страница выходит вчетверо
+     короче, весь ассортимент виден за один-два экрана. */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+  @media(min-width:560px){.grid{grid-template-columns:repeat(4,1fr);gap:11px}}
+  .item{background:var(--card);border-radius:12px;overflow:hidden;display:block;
+        text-decoration:none;color:var(--ink);transition:transform .12s ease}
+  .item:active{transform:scale(.985)}
+  .item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#e6e1da}
+  .item .p{font-size:14px;font-weight:700;padding:7px 8px 1px}
+  .sub{grid-column:1/-1;margin:12px 0 -2px;font-size:13px;letter-spacing:2.2px;
+       text-transform:uppercase;color:#8d938c;font-weight:700}
+  .item .o{padding:0 8px 9px;font-size:11px;font-weight:300;color:#7d837c;line-height:1.3;
+           height:50px;overflow:hidden}
+
+  .cta{margin:22px 0 0;display:block;text-decoration:none;background:var(--green);color:#fff;
+       border-radius:14px;padding:17px;text-align:center}
+  .cta .t{display:block;font-weight:700;font-size:15px;letter-spacing:2.4px;text-transform:uppercase}
+  .cta .s{display:block;margin-top:5px;font-size:13px;font-weight:300;opacity:.9}
+  footer{margin-top:auto;padding-top:26px;text-align:center;font-size:12.5px;color:#8d938c;line-height:1.7}
+  footer a{color:#8d938c}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Romeo Flowers</div>
+  <h1>Букеты к 1 сентября</h1>
+  <p>15 готовых вариантов от 4 000 ₸</p>
+</header>
+
+<div class="note">
+  <div class="row"><span class="dot"></span><span><b>Предзаказ до 31 августа.</b> Первого сентября утро расписано по минутам — чем раньше выберете время, тем точнее привезём.</span></div>
+  <div class="row"><span class="dot"></span><span><b>Оформите до 28 августа</b> — участвуете в розыгрыше рюкзака с наполнением.</span></div>
+  <div class="row"><span class="dot"></span><span>Нажмите на букет — откроется WhatsApp с его номером. Нужен другой размер или цвет — соберём под вас. Напишите, подскажем.</span></div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<a class="cta" id="cta" data-go="whatsapp_bottom" href="#">
+  <span class="t">Написать нам</span>
+  <span class="s">поможем выбрать и подберём время доставки</span>
+</a>
+
+<footer>
+  Romeo Flowers · Костанай<br>
+  <a href="tel:+77003696666">+7 700 369 66 66</a> · круглосуточно
+</footer>
+
+<script>
+(function () {
+  var EXEC = 'https://script.google.com/macros/s/AKfycbx0FYyE3hckyyyhzZPbf4X2gELlhLoGNj8YbRfJcjj1bTbKlKjo-n16cMUWN7SBnxDepw/exec';
+  var WA = 'https://wa.me/77003696666?text=';
+  var src = (new URLSearchParams(location.search).get('utm_source') || 'sept').slice(0, 40);
+  var ua = /android|iphone|ipad|mobile/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+
+  // Каталог от 17.08.2026, второй файл — по одному букету на страницу, 1080×1350.
+  // Порядок: по возрастанию цены, чтобы человек быстро находил свой бюджет.
+  // ⚠️ Позиция «розы + бенто-торт, 9 500» во втором файле ОТСУТСТВУЕТ — проверено по
+  // плашкам всех 14 фото. Взята из первого файла (коллажи), поэтому её картинка 540×720
+  // против 720×900 у остальных. Если пришлют её отдельно — заменить b07.
+  var ITEMS = [
+    { f: 'b01', p: 9500, o: 'розы + бенто-торт' },
+    { f: 'b02', p: 9900, o: 'хризантемы + клубника в шоколаде' },
+    { f: 'b03', p: 10500, o: 'гортензия и розы' },
+    { f: 'b04', p: 11000, o: 'розы + клубника в шоколаде' },
+    { f: 'b05', p: 12000, o: 'кустовые розы' },
+    { f: 'b06', p: 12500, o: 'гортензии, 3 шт' },
+    { f: 'b07', p: 12900, o: 'хризантемы, большой букет' },
+    { f: 'b08', p: 14000, o: 'корзина с хризантемой и гипсофилой' },
+    { f: 'b09', p: 14900, o: 'эустома' },
+    { f: 'b10', p: 8500, o: 'хризантемы + бенто-торт' },
+    { f: 'b11', p: 8900, o: 'розы в сумочке' },
+    { f: 'b12', p: 7000, o: 'гортензия, 1 шт' },
+    { f: 'b13', p: 6500, o: 'розы, 3 шт' },
+    { f: 'b14', p: 4000, o: 'хризантема, розовая упаковка' },
+    { f: 'b15', p: 4000, o: 'хризантема, мятная упаковка' }
+  ];
+
+  function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸'; }
+
+  function track(event, target) {
+    var payload = JSON.stringify({ type: 'hub_event', event: event, target: target || '', src: src, ua: ua });
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(EXEC, new Blob([payload], { type: 'text/plain;charset=UTF-8' }));
+        return;
+      }
+    } catch (e) {}
+    try { fetch(EXEC, { method: 'POST', body: payload, headers: { 'Content-Type': 'text/plain' }, keepalive: true }); } catch (e) {}
+  }
+
+  // После девятой позиции начинается блок компактных букетов. Без подписи переход
+  // от 14 900 к 8 500 читался бы как сбой сортировки.
+  var SPLIT_AFTER = 9;
+  var grid = document.getElementById('grid');
+  ITEMS.forEach(function (it, i) {
+    var num = i + 1;
+    if (i === SPLIT_AFTER) {
+      var h = document.createElement('div');
+      h.className = 'sub';
+      h.textContent = 'Компактные букеты';
+      grid.appendChild(h);
+    }
+    var text = encodeURIComponent('Здравствуйте! Хочу букет №' + num + ' к 1 сентября (' + money(it.p) + ')');
+    var el = document.createElement('a');
+    el.className = 'item';
+    el.setAttribute('data-go', 'order_' + num);
+    el.setAttribute('href', WA + text);
+    el.innerHTML =
+      '<img loading="lazy" src="img/' + it.f + '.jpg" alt="Букет №' + num + ', ' + it.o + '">' +
+      '<div class="p">' + money(it.p) + '</div>' +
+      '<div class="o">' + it.o + '</div>';
+    grid.appendChild(el);
+  });
+
+  document.getElementById('cta').href =
+    WA + encodeURIComponent('Здравствуйте! Хочу заказать букет к 1 сентября');
+
+  // Ссылки не перехватываем: маяк уходит фоном, человек переходит сразу.
+  document.querySelectorAll('a[data-go]').forEach(function (a) {
+    a.addEventListener('click', function () { track('click', a.getAttribute('data-go')); });
+  });
+  track('view');
+})();
+</script>
+</body>
+</html>
