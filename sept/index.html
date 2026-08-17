@@ -112,7 +112,9 @@
   function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸'; }
 
   function track(event, target) {
-    var payload = JSON.stringify({ type: 'hub_event', event: event, target: target || '', src: src, ua: ua });
+    // page:'sept' обязателен — счётчик общий с шапкой профиля, без пометки заходы каталога
+    // влились бы в её статистику и испортили отчёт.
+    var payload = JSON.stringify({ type: 'hub_event', event: event, target: target || '', src: src, ua: ua, page: 'sept' });
     try {
       if (navigator.sendBeacon) {
         navigator.sendBeacon(EXEC, new Blob([payload], { type: 'text/plain;charset=UTF-8' }));
