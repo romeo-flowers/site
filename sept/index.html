@@ -63,7 +63,7 @@
 
 <div class="note">
   <div class="row"><span class="dot"></span><span><b>Предзаказ до 31 августа.</b> Первого сентября утро расписано по минутам — чем раньше выберете время, тем точнее привезём.</span></div>
-  <div class="row"><span class="dot"></span><span><b>Оформите до 28 августа</b> — участвуете в розыгрыше рюкзака с наполнением.</span></div>
+  <div class="row"><span class="dot"></span><span><b>Оформите до 28 августа</b> и участвуете в розыгрыше. Разыграем три набора к школе по 25 000 ₸: рюкзак, бутылка для воды, сумка для сменной обуви, тетради, ручки, карандаши, фломастеры, пластилин, циркуль, линейки, цветная бумага, обложки. <b>Три победителя</b>, розыгрыш 29 августа, набор привезём вместе с букетом.</span></div>
   <div class="row"><span class="dot"></span><span>Нажмите на букет — откроется WhatsApp с его номером. Нужен другой размер или цвет — соберём под вас. Напишите, подскажем.</span></div>
 </div>
 
@@ -83,7 +83,13 @@
 (function () {
   var EXEC = 'https://script.google.com/macros/s/AKfycbx0FYyE3hckyyyhzZPbf4X2gELlhLoGNj8YbRfJcjj1bTbKlKjo-n16cMUWN7SBnxDepw/exec';
   var WA = 'https://wa.me/77003696666?text=';
-  var src = (new URLSearchParams(location.search).get('utm_source') || 'sept').slice(0, 40);
+  var qs = new URLSearchParams(location.search);
+  var src = (qs.get('utm_source') || 'sept').slice(0, 40);
+  // Код получателя рассылки: /sept/?u=<8 hex>. Это хэш телефона, а не номер — ссылка уходит
+  // в WhatsApp и может быть переслана дальше. Нужен, чтобы увидеть поимённо, кто открывал
+  // каталог и не написал: таким пишет менеджер лично, а не следующая волна рассылки.
+  // Мусор в параметре игнорируем: без кода страница работает ровно как раньше.
+  var u = (qs.get('u') || '').replace(/[^a-f0-9]/gi, '').slice(0, 16);
   var ua = /android|iphone|ipad|mobile/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
 
   // Каталог от 17.08.2026, второй файл — по одному букету на страницу, 1080×1350.
@@ -114,7 +120,7 @@
   function track(event, target) {
     // page:'sept' обязателен — счётчик общий с шапкой профиля, без пометки заходы каталога
     // влились бы в её статистику и испортили отчёт.
-    var payload = JSON.stringify({ type: 'hub_event', event: event, target: target || '', src: src, ua: ua, page: 'sept' });
+    var payload = JSON.stringify({ type: 'hub_event', event: event, target: target || '', src: src, ua: ua, page: 'sept', u: u });
     try {
       if (navigator.sendBeacon) {
         navigator.sendBeacon(EXEC, new Blob([payload], { type: 'text/plain;charset=UTF-8' }));
