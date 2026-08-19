@@ -33,17 +33,22 @@
 
   /* Три в ряд: вся карточка — ссылка, отдельной кнопки нет. Страница выходит вчетверо
      короче, весь ассортимент виден за один-два экрана. */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
-  @media(min-width:560px){.grid{grid-template-columns:repeat(4,1fr);gap:11px}}
+  /* По ДВА в ряд на телефоне (решение 19.08 после первого просмотра на живом экране).
+     Пробовали по три — вся витрина влезала в полтора экрана, но букет становился
+     неразличим. Цветы выбирают глазами: короткая страница не помогает, если товар
+     не разглядеть. Длина страницы тут дешевле, чем мелкая картинка. */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+  @media(min-width:560px){.grid{grid-template-columns:repeat(3,1fr);gap:12px}}
+  @media(min-width:860px){.grid{grid-template-columns:repeat(4,1fr)}}
   .item{background:var(--card);border-radius:12px;overflow:hidden;display:block;
         text-decoration:none;color:var(--ink);transition:transform .12s ease}
   .item:active{transform:scale(.985)}
   .item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#e6e1da}
-  .item .p{font-size:14px;font-weight:700;padding:7px 8px 1px}
+  .item .p{font-size:16px;font-weight:700;padding:9px 11px 2px}
   .sub{grid-column:1/-1;margin:12px 0 -2px;font-size:13px;letter-spacing:2.2px;
        text-transform:uppercase;color:#8d938c;font-weight:700}
-  .item .o{padding:0 8px 9px;font-size:11px;font-weight:300;color:#7d837c;line-height:1.3;
-           height:50px;overflow:hidden}
+  .item .o{padding:0 11px 11px;font-size:12.5px;font-weight:300;color:#7d837c;line-height:1.35;
+           height:52px;overflow:hidden}
 
   .cta{margin:22px 0 0;display:block;text-decoration:none;background:var(--green);color:#fff;
        border-radius:14px;padding:17px;text-align:center}
