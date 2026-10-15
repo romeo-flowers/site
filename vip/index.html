@@ -46,6 +46,13 @@
   .zones li:first-child{border-top:0}
   .zones .p{text-align:right;font-weight:700;color:#3f463e;flex:0 0 auto;max-width:45%}
   .zones .free{color:var(--label)}
+  .cmp{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--line);
+       border-radius:16px;overflow:hidden;margin:0 0 12px;font-size:15px}
+  .cmp th,.cmp td{padding:12px 14px;text-align:center;border-top:1px solid #ebe6df}
+  .cmp thead th{border-top:0;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--muted)}
+  .cmp th[scope=row]{text-align:left;font-weight:400;color:var(--muted)}
+  .cmp .vip{background:#eef2ec;color:#2f3a2e;font-weight:700}
+  .cmp thead .vip{color:var(--label)}
   a.btn{display:block;background:var(--green);color:#fff;text-decoration:none;border-radius:14px;
         padding:17px 18px;margin:8px 0 12px;text-align:center;transition:transform .12s ease,background .12s ease}
   a.btn:active{transform:scale(.985);background:var(--green-dark)}
@@ -63,6 +70,14 @@
   </header>
 
   <p class="lead">Вы среди самых постоянных клиентов Ромео.<br><b>Вот что это даёт.</b></p>
+
+  <table class="cmp">
+    <thead><tr><th></th><th>Обычный</th><th class="vip">VIP</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Баллы с покупки</th><td>3%</td><td class="vip">7%</td></tr>
+      <tr><th scope="row">Доставка по городу</th><td>2 000 ₸</td><td class="vip">бесплатно</td></tr>
+    </tbody>
+  </table>
 
   <div class="card">
     <h2>Баллы</h2>
